@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const obterEstacao = mes => {
+    const estacoes = {
+        'dezembro': 'Verão',
+        'janeiro': 'Verão',
+        'fevereiro': 'Verão',
+        'março': 'Outono',
+        'abril': 'Outono',
+        'maio': 'Outono',
+        'junho': 'Inverno',
+        'julho': 'Inverno',
+        'agosto': 'Inverno',
+        'setembro': 'Primavera',
+        'outubro': 'Primavera',
+        'novembro': 'Primavera'
+    };
+    return estacoes[mes.toLowerCase()] || 'Mês inválido';
+};
+
+
+const mesInformado = prompt("Digite o mês:").trim();
+const estacao = obterEstacao(mesInformado);
+alert(`A estação do ano para o mês de ${mesInformado} é: ${estacao}`);
+
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('Digite o mês: ', mesInformado => {
+    const estacao = obterEstacao(mesInformado.trim());
+    console.log(`A estação do ano para o mês de ${mesInformado} é: ${estacao}`);
+    rl.close();
+});
+</script>
+</body>
+</html>
